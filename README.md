@@ -1,4 +1,4 @@
-﻿# ğŸ–¥ï¸ Automation Dashboard
+# ğŸ–¥ï¸ Automation Dashboard
 
 Merkezi kontrol paneli, canli metrikler, gorev izleme ve agent yonetim arayuzu.
 
