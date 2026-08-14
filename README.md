@@ -1,21 +1,30 @@
-# ğŸ–¥ï¸ Automation Dashboard
+# 🖥️ Voyagerroc Automation Dashboard
 
-Merkezi kontrol paneli, canli metrikler, gorev izleme ve agent yonetim arayuzu.
+> Ekosistemin tüm metriklerini, n8n iş akışlarını, servis durumlarını ve **3-Shot (30s) Sinematik Video Stüdyosunu** tek bir görsel merkezden yöneten **Yönetim Paneli**.
+
+---
+
+## 🏛️ Dashboard Mimarisi ve Arayüz Şeması
+
+```mermaid
+graph TD
+    UI[🖥️ Executive Dashboard UI] --> Studio[🎬 3-Shot Video Studio]
+    UI --> Monitor[📊 Canlı Metrikler & Servis Takibi]
+    UI --> QuickLinks[🌐 3D Knowledge Graph & GitHub Links]
+    
+    Studio -->|JSON Payload| OS[🧠 Automation-OS :8000]
+    Studio -->|Trigger Webhook| N8N[⚡ n8n :5678]
+```
 
 ---
 
-## ğŸ›ï¸ Organizasyon
-Bu repo **[Voyagerroc-Automation](https://github.com/Voyagerroc-Automation)** ekosisteminin bir parcasidir.
-
-## ğŸš€ Gorev ve Ozellikler
-- **Durum:** Aktif Gelistirme
-- **Entegrasyon:** Automation-OS & Giant Automation Library
-
-## ğŸ“¦ Kurulum ve Kullanim
-``bash
-# Repoyu klonlayin
-git clone https://github.com/Voyagerroc-Automation/automation-dashboard.git
-``
+## 🚀 Çalıştırma & Kullanım
+- `index.html` dosyasını doğrudan herhangi bir tarayıcıda çift tıklayarak açabilirsiniz.
+- Veya yerel bir HTTP sunucusu ile ayağa kaldırabilirsiniz:
+```bash
+# Node ile anında başlatma
+npx serve public
+```
 
 ---
-Â© 2026 Voyagerroc Automation. All rights reserved.
+© 2026 Voyagerroc Automation. All rights reserved.
