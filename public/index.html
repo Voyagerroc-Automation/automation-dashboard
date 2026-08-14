@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="tr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voyagerroc Automation â€” Executive Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Outfit', sans-serif; background-color: #06090e; color: #e2e8f0; }
+    .code-font { font-family: 'JetBrains Mono', monospace; }
+    .glow-cyan { box-shadow: 0 0 25px rgba(6, 182, 212, 0.25); }
+    .glass-card { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(51, 65, 85, 0.4); }
+    .glass-card:hover { border-color: rgba(6, 182, 212, 0.4); }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+  <!-- Top Navigation -->
+  <header class="h-16 border-b border-slate-800 bg-[#090d16]/80 backdrop-blur-md px-6 flex items-center justify-between sticky top-0 z-50">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-lg bg-cyan-500/20 border border-cyan-400 flex items-center justify-center font-bold text-cyan-400">VR</div>
+      <div>
+        <h1 class="text-base font-bold tracking-wide text-white">VOYAGERROC <span class="text-cyan-400">AUTOMATION</span></h1>
+        <p class="text-xs text-slate-400">Autonomous Video & Content Operations OS</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-4">
+      <span class="flex items-center gap-2 text-xs px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Automation-OS Online (Port 8000)
+      </span>
+      <a href="http://localhost:9749" target="_blank" class="text-xs px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-slate-700 transition">
+        ğŸŒ 3D Knowledge Graph
+      </a>
+      <a href="https://github.com/Voyagerroc-Automation" target="_blank" class="text-xs px-3 py-1.5 rounded-md bg-cyan-600 hover:bg-cyan-500 text-white font-medium transition shadow-lg shadow-cyan-600/20">
+        GitHub Org â†—
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-6 space-y-6">
+    <!-- Stat Metrics -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="glass-card p-4 rounded-xl">
+        <div class="text-xs text-slate-400 font-medium">Toplam Repo & ModÃ¼l</div>
+        <div class="text-2xl font-black text-white mt-1">11 Repositories</div>
+        <div class="text-xs text-cyan-400 mt-1">100% Senkronize</div>
+      </div>
+      <div class="glass-card p-4 rounded-xl">
+        <div class="text-xs text-slate-400 font-medium">Aktif Video Motoru</div>
+        <div class="text-2xl font-black text-white mt-1">Seedance 2.5 + VEO3</div>
+        <div class="text-xs text-emerald-400 mt-1">8-Element Audio Native</div>
+      </div>
+      <div class="glass-card p-4 rounded-xl">
+        <div class="text-xs text-slate-400 font-medium">n8n KÃ¼tÃ¼phanesi</div>
+        <div class="text-2xl font-black text-white mt-1">5 Workflows</div>
+        <div class="text-xs text-purple-400 mt-1">UGC + Shorts + Bestseller</div>
+      </div>
+      <div class="glass-card p-4 rounded-xl">
+        <div class="text-xs text-slate-400 font-medium">Denetim Ä°zi (Audit Trail)</div>
+        <div class="text-2xl font-black text-white mt-1">0 Hata</div>
+        <div class="text-xs text-emerald-400 mt-1">Open-LLM-Audit Aktif</div>
+      </div>
+    </div>
+
+    <!-- Quick Action: 3-Shot (30s) Video Studio -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 glass-card p-6 rounded-2xl glow-cyan">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+              ğŸ¬ 3-Shot (30s) Sinematik Video StÃ¼dyosu
+            </h2>
+            <p class="text-xs text-slate-400">Higgsfield & Seedance 2.5 iÃ§in hatasÄ±z, 3x10s zaman kodlu sinematik Ã¼retim</p>
+          </div>
+          <span class="text-xs px-2.5 py-1 bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 rounded-lg">Director Agent</span>
+        </div>
+
+        <form id="videoForm" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Karakter / Ã–zne (Subject)</label>
+              <input type="text" id="subject" value="Cybernetic Ronin warrior in battle-worn armor" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-cyan-400">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Mekan & Atmosfer (Context)</label>
+              <input type="text" id="context" value="Snowy mountain trapped in 20m thick volumetric fog, cold blue rim light" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-cyan-400">
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Film Stili</label>
+              <select id="style" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-cyan-400">
+                <option>Cinematic 35mm, anamorphic flare</option>
+                <option>Hyper-realistic UGC (Handheld iPhone)</option>
+                <option>Studio Product Commercial</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Diyalog (Native Audio)</label>
+              <input type="text" id="dialogue" value="Hold the line!" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-cyan-400">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-1">Model & Oran</label>
+              <select id="model" class="w-full px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-sm text-white focus:outline-none focus:border-cyan-400">
+                <option>Seedance 2.5 (16:9 - 30s)</option>
+                <option>Google VEO 3.0 (9:16 - 12s)</option>
+                <option>Sora 2 UGC (9:16 - 12s)</option>
+              </select>
+            </div>
+          </div>
+          <button type="button" onclick="generatePrompt()" class="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold rounded-xl shadow-lg shadow-cyan-500/25 transition">
+            ğŸš€ 3-Shot (30s) Promptunu & Pipeline'Ä± Tetikle
+          </button>
+        </form>
+
+        <div id="resultBox" class="mt-4 hidden p-4 bg-slate-950 border border-slate-800 rounded-xl">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold text-cyan-400">ğŸ¯ ÃœRETÄ°LEN 8-ELEMANLI MASTER PROMPTLAR (3 x 10s)</span>
+            <button onclick="copyPrompts()" class="text-xs px-2 py-1 bg-slate-800 hover:bg-slate-700 text-white rounded">Kopyala</button>
+          </div>
+          <pre id="promptOutput" class="text-xs code-font text-slate-300 whitespace-pre-wrap max-h-60 overflow-y-auto"></pre>
+        </div>
+      </div>
+
+      <!-- Live Operations & Modules -->
+      <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+        <div>
+          <h3 class="text-base font-bold text-white mb-3">ğŸ“¦ Ekosistem ModÃ¼lleri</h3>
+          <div class="space-y-2.5">
+            <a href="https://github.com/Voyagerroc-Automation/automation-os" target="_blank" class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-xs transition">
+              <span class="font-medium text-white">ğŸ§  automation-os</span>
+              <span class="text-emerald-400 text-[11px]">Online (8000)</span>
+            </a>
+            <a href="https://github.com/Voyagerroc-Automation/giant-automation-library" target="_blank" class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-xs transition">
+              <span class="font-medium text-white">âš¡ giant-automation-library</span>
+              <span class="text-cyan-400 text-[11px]">5 Workflows</span>
+            </a>
+            <a href="https://github.com/Voyagerroc-Automation/youtube-shorts-pipeline" target="_blank" class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-xs transition">
+              <span class="font-medium text-white">ğŸš€ youtube-shorts-pipeline</span>
+              <span class="text-purple-400 text-[11px]">Auto Scheduler</span>
+            </a>
+            <a href="https://github.com/Voyagerroc-Automation/prompt-operating-system" target="_blank" class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-xs transition">
+              <span class="font-medium text-white">ğŸ“ prompt-operating-system</span>
+              <span class="text-amber-400 text-[11px]">8-Element v2.5</span>
+            </a>
+            <a href="https://github.com/Voyagerroc-Automation/infrastructure" target="_blank" class="flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 hover:bg-slate-800 border border-slate-800 text-xs transition">
+              <span class="font-medium text-white">ğŸ—ï¸ infrastructure</span>
+              <span class="text-blue-400 text-[11px]">Docker Ready</span>
+            </a>
+          </div>
+        </div>
+        <div class="mt-4 pt-4 border-t border-slate-800/80 text-[11px] text-slate-500 text-center">
+          Â© 2026 Voyagerroc Automation â€¢ All systems operational
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function generatePrompt() {
+      const subject = document.getElementById('subject').value;
+      const context = document.getElementById('context').value;
+      const style = document.getElementById('style').value;
+      const dialogue = document.getElementById('dialogue').value;
+
+      const output = `[SHOT 1 | 00:00-00:10 | 50mm Medium Tracking - Setup]
+Subject: ${subject} standing centered in combat posture.
+Context: ${context}.
+Style: ${style}.
+Camera: Smooth 50mm dolly tracking shot starting at 8m distance, closing in to 3m at eye-level.
+Timecode: 0.0s-3.0s: Reveal. 3.0s-7.5s: Energy buildup. 7.5s-10.0s: Locks into match-cut posture.
+Native Audio: Whispered dialogue "${dialogue}". Ambient wind howling, crunching frozen ground under boots.
+
+--------------------------------------------------------------------------------
+
+[SHOT 2 | 00:10-00:20 | 24mm Low-Angle Orbit - Escalation & Bullet Time]
+Match Cut: Poses and weapon angle at 00:10.0 exactly match end of Shot 1.
+Subject: ${subject} engaging incoming crystal beast.
+Camera: 24mm low-angle 180-degree high-speed arc orbiting from 3m to 1.5m radius.
+Timecode: 0.0s-2.0s: Sprint 3x faster than standard dolly. 2.0s-6.0s: 0.2x Bullet-time dilation. 6.0s-10.0s: Crystal edge shatters enemy weapon.
+Native Audio: Sudden vacuum silence during bullet-time, explosive impact crash, electric spark sizzle.
+
+--------------------------------------------------------------------------------
+
+[SHOT 3 | 00:20-00:30 | 85mm Telephoto to 35mm Wide - Heroic Resolution]
+Subject: ${subject} intense eye focus transitioning to wide army reveal.
+Camera: Starts on 85mm extreme close-up, hard snap zoom-out at 05.0s to 35mm wide shot.
+Timecode: 0.0s-4.5s: Eye twitch, breath vapor condensating. 4.5s-5.0s: 0.5s instantaneous weapon transformation. 5.0s-10.0s: Wide frame reveals perimeter army dropping to one knee cliffhanger.
+Native Audio: Clear ragged exhale breath sound, mechanical locking snap click, distant horns sounding.`;
+
+      document.getElementById('promptOutput').textContent = output;
+      document.getElementById('resultBox').classList.remove('hidden');
+    }
+
+    function copyPrompts() {
+      const text = document.getElementById('promptOutput').textContent;
+      navigator.clipboard.writeText(text);
+      alert('Promptlar panoya kopyalandÄ±!');
+    }
+  </script>
+</body>
+</html>
