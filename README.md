@@ -33,10 +33,6 @@ npx serve .
 ```
 automation-dashboard/
 ├── index.html            # Panelin tamamı (HTML + Tailwind CDN + vanilla JS) — tek kaynak
-├── src/
-│   ├── components/       # (henüz boş - ileride bileşenlere ayrılması planlanıyor)
-│   └── styles/           # (henüz boş)
-├── docs/                 # (henüz boş)
 └── README.md
 ```
 
