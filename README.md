@@ -24,17 +24,15 @@ Derleme adımı yoktur:
 
 ```bash
 # 1) Doğrudan: index.html dosyasına çift tıklayın
-# 2) veya yerel bir HTTP sunucusu ile:
-npx serve public
+# 2) veya yerel bir HTTP sunucusu ile (depo kökünden):
+npx serve .
 ```
 
 ## Klasör yapısı
 
 ```
 automation-dashboard/
-├── index.html            # Panelin tamamı (HTML + Tailwind CDN + vanilla JS)
-├── public/
-│   └── index.html        # Aynı sayfanın kopyası (statik sunum için)
+├── index.html            # Panelin tamamı (HTML + Tailwind CDN + vanilla JS) — tek kaynak
 ├── src/
 │   ├── components/       # (henüz boş - ileride bileşenlere ayrılması planlanıyor)
 │   └── styles/           # (henüz boş)
